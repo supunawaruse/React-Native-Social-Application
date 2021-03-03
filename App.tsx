@@ -5,6 +5,8 @@ import firebase from 'firebase';
 import { StyleSheet, Text, View } from 'react-native';
 import AuthNavigation from './navigation/AuthNavigation';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import store from './redux/Store';
 
 export default function App() {
 
@@ -12,10 +14,9 @@ export default function App() {
 
 
   return (
-
-    <AuthNavigation />
-
-
+    <Provider store={store}>
+      <AuthNavigation />
+    </Provider>
   );
 }
 
